@@ -1,17 +1,17 @@
 class Vehicle {
-  constructor(body, movingParts, interior) {
-    this.body = body;
+  constructor({ body, movingParts, interior } = {}) {
+    this._body = body; // имя свойства не может совпадать с именем сеттера и геттера поэтому добавляем _
     this.movingParts = movingParts;
     this.interior = interior;
   }
 
-  //   get body() {
-  //     return this.body;
-  //   }
+  get body() {
+    return this.body;
+  }
 
-  //   set body(newBody) {
-  //     this.body = newBody;
-  //   }
+  set body(newBody) {
+    this._body = newBody;
+  }
 }
 
 class Car extends Vehicle {
